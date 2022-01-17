@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "src": "index.js",
+  "srcdoc": "source/index.html",
   "scripts": {
     "dev": "parcel source/index.html",
     "build": "parcel build source/index.html --public-url ."
