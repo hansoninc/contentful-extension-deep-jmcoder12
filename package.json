@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@contentful/app-sdk": "^4.3.1"
+  }
+}
