@@ -1,9 +1,8 @@
 {
+  "id": "depp-copy",
   "name": "deep-copy",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "srcdoc": "source/index.html",
+  "version": "1.0.1",
+  "srcdoc": "index.html",
   "scripts": {
     "dev": "parcel source/index.html",
     "build": "parcel build source/index.html --public-url ."
