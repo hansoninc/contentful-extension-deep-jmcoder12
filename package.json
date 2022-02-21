@@ -1,5 +1,26 @@
 {
+  "name": "deep-copy",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "npx parcel source/index.html --no-content-hash",
+    "build": "npx parcel build source/index.html --public-url . --no-content-hash"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@contentful/app-sdk": "^4.3.1"
+    "@babel/runtime": "^7.3.4",
+    "@contentful/app-sdk": "^4.3.1",
+    "contentful-management": "^5.7.0",
+    "contentful-ui-extensions-sdk": "^3.7.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "cssnano": "^4.1.10",
+    "parcel": "^2.3.2"
   }
 }

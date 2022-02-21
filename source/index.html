@@ -102,10 +102,10 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="app.js" type="module"></script>
     <script type="text/javascript">
       window.contentfulApp.init(function (extension) {
-        var value = extension.field.getValue();
+        const value = extension.field.getValue();
         extension.field.setValue('Hello world!');
       });
     </script>
