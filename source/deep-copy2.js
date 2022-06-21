@@ -48,6 +48,12 @@ async function findReferences (space, entryId) {
 
   const entry = await getEntry(space, entryId)
 
+  const skipList = ['cta'];
+  if (skipList.includes(entry.sys.contentType.sys.id)) {
+    log(` -- Found ${entry.sys.contentType.id} -- SKIPPING!`)
+    return
+  }
+
   referenceCount++
 
   references[entryId] = entry
