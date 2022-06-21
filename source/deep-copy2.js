@@ -94,7 +94,7 @@ async function updateReferencesOnField(field, newReferences) {
     }))
   }
 
-  if (field && field.sys && field.sys.type === 'Link' && field.sys.linkType === 'Entry' &&  newReferences[field.sys.id]) {
+  if (field && field.sys && field.sys.type === 'Link' && field.sys.linkType === 'Entry' &&  (field.sys.id in newReferences)) {
     const oldReference = references[field.sys.id]
     const newReference = newReferences[field.sys.id]
     field.sys.id = newReference.sys.id
