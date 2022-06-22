@@ -19,6 +19,7 @@ async function updateEntry (space, entry) {
   try {
     return await space.updateEntry(entry)
   } catch(e) {
+    log(` -- Error updating entry ${entry}`)
     console.log(e);
   }
 }
@@ -28,6 +29,7 @@ async function createEntry (space, type, data) {
   try {
     return await space.createEntry(type, data)
   } catch(e) {
+    log(` -- Error creating entry of type ${type}`)
     console.log(e);
   }
 }
@@ -37,6 +39,7 @@ async function getEntry (space, entryId) {
   try {
     return await space.getEntry(entryId)
   } catch(e) {
+    log(` -- Error getting entry ${entryId}`)
     console.log(e);
   }
 }
@@ -59,6 +62,9 @@ async function findReferences (space, entryId) {
   }
 
   const entry = await getEntry(space, entryId)
+  if (entry == null) {
+    return
+  }
 
   const includeList = ["fiftyFifty", "fiftyFiftyCarousel", "fiftyFiftyCarouselSlide", , "accordion", "accordionItem", "anchorLink", "pageCarousel", "pageCarouselSlide", "cta", "fullWidthCarousel", "fullWidthCarouselSlide", "gallery", "hero", "hotspotImage", "imageGrid", "imageGridItem", "jumpNav", "marketingBlock", "page", "richTextBlock", "richTextColumns", "sectionDivider", "testimonialCarousel", "testimonialSlide", "translationFolder"];
   if (!(includeList.includes(entry.sys.contentType.sys.id))) {
