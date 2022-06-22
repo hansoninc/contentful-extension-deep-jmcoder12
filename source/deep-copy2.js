@@ -16,17 +16,29 @@ async function wait (ms) {
 
 async function updateEntry (space, entry) {
   await wait(waitTime)
-  return await space.updateEntry(entry)
+  try {
+    return await space.updateEntry(entry)
+  } catch(e) {
+    console.log(e);
+  }
 }
 
 async function createEntry (space, type, data) {
   await wait(waitTime)
-  return await space.createEntry(type, data)
+  try {
+    return await space.createEntry(type, data)
+  } catch(e) {
+    console.log(e);
+  }
 }
 
 async function getEntry (space, entryId) {
   await wait(waitTime)
-  return await space.getEntry(entryId)
+  try {
+    return await space.getEntry(entryId)
+  } catch(e) {
+    console.log(e);
+  }
 }
 
 async function inspectField (space, field) {
