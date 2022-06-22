@@ -50,8 +50,7 @@ async function findReferences (space, entryId) {
 
   const includeList = ["fiftyFifty", "fiftyFiftyCarousel", "fiftyFiftyCarouselSlide", , "accordion", "accordionItem", "anchorLink", "pageCarousel", "pageCarouselSlide", "cta", "fullWidthCarousel", "fullWidthCarouselSlide", "gallery", "hero", "hotspotImage", "imageGrid", "imageGridItem", "jumpNav", "marketingBlock", "page", "richTextBlock", "richTextColumns", "sectionDivider", "testimonialCarousel", "testimonialSlide"];
   if (!(includeList.includes(entry.sys.contentType.sys.id))) {
-    let entryType = entry.sys.contentType.id
-    log(` -- Found ${entryType} -- SKIPPING!`)
+    log(` -- Found ${entry.sys.contentType.sys.id} -- SKIPPING!`)
     return
   }
 
