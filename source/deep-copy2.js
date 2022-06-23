@@ -115,7 +115,12 @@ async function updateReferencesOnField(field, newReferences) {
   if (field && field.sys && field.sys.type === 'Link' && field.sys.linkType === 'Entry' &&  (field.sys.id in newReferences)) {
     const oldReference = references[field.sys.id]
     const newReference = newReferences[field.sys.id]
-    field.sys.id = newReference.sys.id
+    try {
+      field.sys.id = newReference.sys.id
+    } catch(e) {
+      log(` -- Error updating reference on field ${field.sys.id}`)
+      console.log(e);
+    }
   }
 }
 
